@@ -239,7 +239,7 @@ static void testMakecsvSensitivityInterpolation()
 
 static void testMakecsvParams()
 {
-    // JNI から渡した切り出し範囲が使われる (端末プロファイルの t_min / t_max)
+    // 出力する範囲は校正データから波長で決まる. 端末プロファイルの t_min / t_max を変えても出力は変わらない
     writeImage("peak.tif", makeImage([](int i)
                                      { return 10 + 1000 * exp(-pow(i - 2200, 2) / (2 * 9.0)); }));
     writeFile("calib.csv", CALIB);
@@ -253,7 +253,7 @@ static void testMakecsvParams()
     vector<string> head;
     vector<Row> rows;
     CHECK(parseSpectrum(readFile("narrow.csv"), head, rows));
-    CHECK(rows.size() == 399);
+    CHECK(rows.size() == 999);
 }
 
 static void testMakecsvErrors()
