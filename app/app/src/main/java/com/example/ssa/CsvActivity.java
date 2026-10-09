@@ -256,7 +256,7 @@ public class CsvActivity extends AppCompatActivity{
                     return;
                 }
                 iv.getLocationOnScreen(pos);
-                line.setY(pos[1]-50);
+                binding.line.setY(pos[1]-50);
             }
         });
         sb1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

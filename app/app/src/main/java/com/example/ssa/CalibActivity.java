@@ -404,7 +404,7 @@ public class CalibActivity extends AppCompatActivity{
                     return;
                 }
                 iv2.getLocationOnScreen(pos);
-                l1.setY(pos[1]-50);
+                binding.l1.setY(pos[1]-50);
                 for(int j=0; j<4; j++){
                     line[j].setY(pos[1]-50);
                 }
